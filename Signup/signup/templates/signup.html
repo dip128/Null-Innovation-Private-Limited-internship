@@ -1,0 +1,77 @@
+{% load static %}
+<!DOCTYPE html>
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+
+    <title>Signup</title>
+    <meta name="description" content="The HTML5 Herald" />
+    <meta name="author" content="SitePoint" />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link
+      href="https://fonts.googleapis.com/css2?family=Secular+One&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href={% static "style.css" %}>
+  </head>
+
+  <body>
+    <body>
+    {% if messages %}
+          <div class="alert alert-warning alert-dismissible fade show" role="alert">
+            <strong>Oops!</strong> 
+                 {% for message in messages %}
+                       {{message}}
+                   {% endfor %}
+             <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+             <span aria-hidden="true">&times;</span>
+              </button>
+              </div>
+      {% endif %}
+      <div class="main-container">
+        <div class="left-container">
+          <h1>SIGN UP</h1>
+          <div style="width: 100%">
+            <form  action="/" method="POST" class="signup-form">
+            {% csrf_token %}
+              <input type="text" id="first-name" name="first-name"placeholder="First Name" required />
+              <input type="text" id="last-name" name="last-name" placeholder="Last Name" required />
+              <input type="text" id="org-name" name="org-name" placeholder="Organization Name" required/>
+              <input type="email" id="email" name="email" placeholder="E-mail" required />
+              <input  type="password" id="password" name="password1" placeholder="Password" required/>
+              <input  type="password" id="password" name="password2" placeholder="Cofirm Password"  required/>
+              <div class="check">
+                <input
+                  type="checkbox"
+                  onclick="checkTerms()"
+                  id="agree-terms"
+                />
+                <label for="agree-terms"
+                  >Agree to
+                  <a href="#">Terms &amp; Conditions</a>
+                </label>
+              </div>
+              <button
+                type="submit"
+                id="submit"
+                class="button disabled"
+                disabled
+              >
+                Sign Up
+              </button>
+            </form>
+          </div>
+          <div class="signin-link-container">
+            <p class="signin-link">ALready have an account? Click here!</p>
+          </div>
+        </div>
+        <div class="right-container"></div>
+      </div>
+      <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+      <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+      <script src={% static 'script.js'%}></script>
+    </body>
+  </body>
+</html>
