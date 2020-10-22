@@ -1,0 +1,31 @@
+.img{
+    width: 250px;
+    height: 250px;
+}
+
+.img{
+    width: 120px !important;
+    height: 120px !important;
+}
+
+#testimonial{
+    background-image: url("https://us.123rf.com/450wm/tennesseewitney/tennesseewitney1808/tennesseewitney180800008/109754611-stock-illustration-speech-and-thought-bubbles-with-quote-marks-suitable-as-a-background-illustration-for-client-custome.jpg?ver=6") !important;
+}
+
+.navbar{
+    background-color: rgb(87, 7, 7) !important;
+}
+.navbar li{
+    color: white !important;
+}
+@media screen and (max-width: 700px){
+    .navbar li a{
+        color: lemonchiffon !important;
+    }
+    .navbar .navbar-header a{
+        color: lemonchiffon !important;
+    }
+    .navbar .navbar-header button{
+        background-color: lemonchiffon !important;
+    }
+}
